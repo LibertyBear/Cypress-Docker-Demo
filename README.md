@@ -1,6 +1,17 @@
 # cypress-demo-framework
 
+ THINGS TO DO TOMORROW:
+
+ -Local test GUI: Reherse it again.
+ -Local test terminal (this one), do both success and fail cases
+
  
+
+
+
+
+
+
 - ## 💻 Running locally
 
 Before you use this project you only need to have Node Js installed in your computer.
@@ -15,5 +26,7 @@ Run the following commands:
     - npx cypress verify
     - npx cypress run --spec cypress/e2e/pom/homeSauce.spec.js --browser chrome
 
-## 🚀 Install the project
+## 🚀 Running on Docker + Jenkins
+
+
 
