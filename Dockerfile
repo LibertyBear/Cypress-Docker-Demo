@@ -12,7 +12,7 @@ COPY ./cypress ./cypress
 RUN pwd
 RUN ls
 #Install the cypress dependencies in the work directory
-RUN npm Install
+RUN npm install
 RUN npm audit fix
 RUN npx cypress verify
 #Executable commands the container will use[Exec Form]
