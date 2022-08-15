@@ -47,7 +47,7 @@ pipeline {
         stage('Testing') {
             steps {
                 echo "Testing..."
-                
+                sh "docker run -i -v '$PWD':/my-cypress-project -t my-cypress-image:1.1.0 --spec cypress/e2e/pom/homeSauce.spec.js"
             }
         }
         
