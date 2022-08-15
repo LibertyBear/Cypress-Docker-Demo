@@ -1,0 +1,170 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 3,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-08-15T21:10:12.913Z",
+    "end": "2022-08-15T21:10:27.592Z",
+    "duration": 14679,
+    "testsRegistered": 4,
+    "passPercent": 75,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ea622264-7e22-4df3-8e31-ec3c3ab51f1b",
+      "title": "",
+      "fullFile": "cypress\\e2e\\pom\\homeSauce.spec.js",
+      "file": "cypress\\e2e\\pom\\homeSauce.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "116622c7-b103-4333-a13d-f5d8c0830625",
+          "title": "POM Implementation",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should login to inventory page",
+              "fullTitle": "POM Implementation should login to inventory page",
+              "timedOut": null,
+              "duration": 6580,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      {\n        \"title\": \"Failed screenshot\",\n        \"value\": \"\\\\homeSauce.spec.js\\\\POM Implementation -- should login to inventory page (failed).png\"\n      }\n    ]\n  ]\n}",
+              "code": "_homeSaucePage.default.typeUsername('standard_user');\n_homeSaucePage.default.typePassword('secret_sauce');\n_homeSaucePage.default.clickLogin();\n_inventoryPage.default.elements.titleSpan().should('have.text', 'Productss');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<span.title>' to have text 'Productss', but the text was 'Products'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<span.title>' to have text 'Productss', but the text was 'Products'\n    at Context.eval (https://www.saucedemo.com/__cypress/tests?p=cypress\\e2e\\pom\\homeSauce.spec.js:159:49)",
+                "diff": "- 'Products'\n+ 'Productss'\n"
+              },
+              "uuid": "e9ba2cfc-3698-4902-a49c-6ba7a408bbdd",
+              "parentUUID": "116622c7-b103-4333-a13d-f5d8c0830625",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should display locked out message",
+              "fullTitle": "POM Implementation should display locked out message",
+              "timedOut": null,
+              "duration": 1212,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_homeSaucePage.default.typeUsername('locked_out_user');\n_homeSaucePage.default.typePassword('secret_sauce');\n_homeSaucePage.default.clickLogin();\n_homeSaucePage.default.elements.errorMessage().should('have.text', 'Epic sadface: Sorry, this user has been locked out.');",
+              "err": {},
+              "uuid": "27b1d389-becf-4226-b7f5-b603d84074ce",
+              "parentUUID": "116622c7-b103-4333-a13d-f5d8c0830625",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should display incorrect username message",
+              "fullTitle": "POM Implementation should display incorrect username message",
+              "timedOut": null,
+              "duration": 1185,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_homeSaucePage.default.typeUsername('dummyUsername');\n_homeSaucePage.default.typePassword('secret_sauce');\n_homeSaucePage.default.clickLogin();\n_homeSaucePage.default.elements.errorMessage().should('have.text', 'Epic sadface: Username and password do not match any user in this service');",
+              "err": {},
+              "uuid": "babafbcf-3bb3-4023-b3a9-d4c44c2185ac",
+              "parentUUID": "116622c7-b103-4333-a13d-f5d8c0830625",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should display incorrect password message",
+              "fullTitle": "POM Implementation should display incorrect password message",
+              "timedOut": null,
+              "duration": 1117,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_homeSaucePage.default.typeUsername('locked_out_user');\n_homeSaucePage.default.typePassword('dummyPassword');\n_homeSaucePage.default.clickLogin();\n_homeSaucePage.default.elements.errorMessage().should('have.text', 'Epic sadface: Username and password do not match any user in this service');",
+              "err": {},
+              "uuid": "da0090c2-d2e8-482a-b1cf-684fe4defdcf",
+              "parentUUID": "116622c7-b103-4333-a13d-f5d8c0830625",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "27b1d389-becf-4226-b7f5-b603d84074ce",
+            "babafbcf-3bb3-4023-b3a9-d4c44c2185ac",
+            "da0090c2-d2e8-482a-b1cf-684fe4defdcf"
+          ],
+          "failures": [
+            "e9ba2cfc-3698-4902-a49c-6ba7a408bbdd"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 10094,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\report\\.jsons",
+        "charts": true,
+        "reportPageTitle": "Joan Media Demo Report",
+        "embeddedScreenshots": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -48,6 +48,8 @@ pipeline {
             steps {
                 echo "Testing..."
                 sh "docker run -v '$PWD':/my-cypress-project -t my-cypress-image:1.1.0 --spec cypress/e2e/pom/homeSauce.spec.js --headless --browser chrome --config-file=/my-cypress-project/cypress.config.ts"
+
+               // sh "docker run -v '$PWD':/my-cypress-project -t my-cypress-image:1.1.0 --spec cypress/e2e/pom/homeSauce.spec.js --headless --browser chrome --config-file=/my-cypress-project/cypress.config.ts"
             }
         }
         

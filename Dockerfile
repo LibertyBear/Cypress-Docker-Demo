@@ -12,8 +12,9 @@ COPY ./cypress ./cypress
 RUN pwd
 RUN ls
 #Install the cypress dependencies in the work directory
-RUN npm install
-RUN touch cypress.config.ts
+RUN npm Install
+RUN npm audit fix
+RUN npx cypress verify
 #Executable commands the container will use[Exec Form]
 ENTRYPOINT ["npx","cypress","run"]
 #With CMD in this case, we can specify more parameters to the last entrypoint.
