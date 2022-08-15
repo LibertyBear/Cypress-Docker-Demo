@@ -6,7 +6,7 @@ RUN mkdir /my-cypress-project
 WORKDIR /my-cypress-project
 #Let's copy the essential files that we MUST use to run our scripts.
 COPY ./package.json .
-COPY ./cypress.json .
+COPY ./cypress.config.ts .
 COPY ./cypress ./cypress
 #Install the cypress dependencies in the work directory
 RUN npm install
