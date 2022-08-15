@@ -8,6 +8,7 @@ WORKDIR /my-cypress-project
 COPY ./package.json .
 COPY ./cypress.config.ts .
 COPY ./cypress ./cypress
+RUN ls
 #Install the cypress dependencies in the work directory
 RUN npm install
 #Executable commands the container will use[Exec Form]
