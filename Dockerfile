@@ -15,7 +15,7 @@ RUN ls
 RUN npm install
 RUN npm audit fix
 RUN npx cypress verify
-RUN google-chrome --disable-gpu
+RUN google-chrome --disable-gpu --no-sandbox
 #Executable commands the container will use[Exec Form]
 ENTRYPOINT ["npx","cypress","run"]
 #With CMD in this case, we can specify more parameters to the last entrypoint.
