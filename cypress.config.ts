@@ -8,7 +8,7 @@ export default defineConfig({
   reporterOptions: {
     reportDir: 'cypress/report',
     charts: true,
-    reportPageTitle: 'Joan Media Demo Report',
+    reportPageTitle: 'Tommys Demo Report',
     embeddedScreenshots: true,
   },
   env: {

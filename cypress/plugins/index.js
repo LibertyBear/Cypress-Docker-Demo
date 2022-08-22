@@ -15,6 +15,34 @@
 /**
  * @type {Cypress.PluginConfig}
  */
+
+// cypress/plugins/index.js
+module.exports = (on, config) => {
+  on('before:browser:launch', (browser = {}, launchOptions) => {
+    // `args` is an array of all the arguments that will
+    // be passed to browsers when it launches
+    console.log(launchOptions.args) // print all current args
+
+    if (browser.name == 'chrome') {
+      // auto open devtools
+      launchOptions.args.push('--disable-gpu')
+    }
+
+    if (browser.family === 'firefox') {
+      // auto open devtools
+      launchOptions.args.push('-devtools')
+    }
+
+    if (browser.name === 'electron') {
+      // auto open devtools
+      launchOptions.preferences.devTools = true
+    }
+
+    // whatever you return here becomes the launchOptions
+    return launchOptions
+  })
+}
+
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
