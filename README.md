@@ -28,5 +28,14 @@ Run the following commands:
 
 ## 🚀 Running on Docker + Jenkins
 
+To build the Docker image run:
+    docker build -t my-cypress-image:1.1.0 .
 
+Check that the image has been created successfully:
+    docker images
+
+Run Cypress, configure this script to run specific test scripts and run in the desired browser:
+    docker run -v '$PWD':/my-cypress-project -t my-cypress-image:1.1.0 --spec cypress/e2e/pom/homeSauce.spec.js --headless --browser chrome --config-file=/my-cypress-project/cypress.config.ts
+
+A Jenkinsfile with a pipeline is included, the parameters allow you to configure test scripts and browsers.
 
