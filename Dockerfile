@@ -15,6 +15,9 @@ RUN ls
 RUN npm install
 RUN npm audit fix
 RUN npx cypress verify
+RUN apt-get install -y xvfb
+RUN apt-get -y install xorg xvfb gtk2-engines-pixbuf
+RUN apt-get -y install dbus-x11 xfonts-base xfonts-100dpi xfonts-75dpi xfonts-cyrillic xfonts-scalable
 RUN google-chrome --disable-gpu --no-sandbox
 #Executable commands the container will use[Exec Form]
 ENTRYPOINT ["npx","cypress","run"]
