@@ -9,6 +9,7 @@ COPY ./package.json .
 COPY ./cypress/tsconfig.json .
 COPY ./cypress.config.ts .
 COPY ./cypress ./cypress
+RUN google-chrome --disable-gpu --no-sandbox --headless
 RUN pwd
 RUN ls
 #Install the cypress dependencies in the work directory
@@ -16,8 +17,7 @@ RUN npm install
 RUN npm audit fix
 RUN npx cypress verify
 RUN apt-get install -y xvfb
-RUN google-chrome --disable-gpu --no-sandbox --headless
 #Executable commands the container will use[Exec Form]
 ENTRYPOINT ["npx","cypress","run"]
 #With CMD in this case, we can specify more parameters to the last entrypoint.
-CMD [""]    
+CMD ["npx cypress run --spec cypress/e2e/pom/homeSauce.spec.js --headless --browser chrome --config-file=/my-cypress-project/cypress.config.ts"]    
