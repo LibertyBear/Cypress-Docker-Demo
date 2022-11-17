@@ -1,10 +1,5 @@
 # cypress-demo-framework
 
- THINGS TO DO TOMORROW:
-
- -Local test GUI: Reherse it again.
- -Local test terminal (this one), do both success and fail cases
-
  
 
 
